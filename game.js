@@ -64,12 +64,15 @@ function checkAnswer(currentLevel){
     }
   }
   else{
+    
+    playSound("wrong");
+    $("body").addClass("game-over");
+    $("#level-title").text("Game Over, Press Any Key to Restart");
+    
     setTimeout(function(){
-      $("body").addClass("game-over");
+      $("body").removeClass("game-over");
     },200);
 
-    playSound("wrong");
-    $("#level-title").text("Game Over, Press Any Key to Restart");
     startOver();
   }
 
